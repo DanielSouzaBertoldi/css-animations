@@ -1,0 +1,156 @@
+body {
+    background: white;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.android {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    background-image: radial-gradient(white 33%, #a4c639);
+}
+
+.head {
+    width: 250px;
+    height: 100px;
+    background: #a4c639;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    border: 10px solid #a4c639;
+    border-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: 6s ease-in-out 1s infinite headOh;
+}
+
+.antenna {
+    background: #a4c639;
+    border-radius: 200px;
+    width: 10px;
+    height: 70px;
+    position: relative;
+    bottom: 70px;
+}
+
+.antenna.left {
+    transform: rotate(-25deg);
+    right: 35px;
+    animation: 6s ease-in-out 1s infinite leftAntennaOh;
+}
+
+.antenna.right {
+    transform: rotate(25deg);
+    left: 35px;
+    animation: 6s ease-in-out 1s infinite rightAntennaOh;
+}
+
+.eye {
+    background: white;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    animation: 6s ease-in-out 1s infinite eyeOh;
+}
+
+.eye::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #a4c639;
+    top: -25px;
+    animation: 6s ease-in-out 1s infinite topPupilOh;
+}
+
+.eye::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #a4c639;
+    bottom: -25px;
+    animation: 6s ease-in-out 1s infinite bottomPupilOh;
+}
+
+.eye:first-of-type {
+    left: calc(15% - 5px);
+}
+
+.eye:last-of-type {
+    right: calc(15% - 5px);
+}
+
+.body {
+    position: relative;
+    height: 240px;
+    width: 270px;
+    background: #a4c639;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin-top: 10px;
+    animation: 6s ease-in-out 1s infinite bodyOh;
+}
+
+.body::before {
+    content: "";
+    width: 70px;
+    height: 200px;
+    background: #a4c639;
+    position: absolute;
+    display: flex;
+    right: -85px;
+    border: 1px solid white;
+    border-top-left-radius: 100% 35%;
+    border-top-right-radius: 100% 35%;
+    border-bottom-left-radius: 100% 35%;
+    border-bottom-right-radius: 100% 35%;
+    animation: 6s ease-in-out 1s infinite rightArmOh;
+}
+
+.body::after {
+    content: "";
+    width: 70px;
+    height: 200px;
+    background: #a4c639;
+    position: absolute;
+    display: flex;
+    left: -85px;
+    border: 1px solid white;
+    border-top-left-radius: 100% 35%;
+    border-top-right-radius: 100% 35%;
+    border-bottom-left-radius: 100% 35%;
+    border-bottom-right-radius: 100% 35%;
+    animation: 6s ease-in-out 1s infinite leftArmOh;
+}
+
+.legs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    bottom: 30px;
+}
+
+.leg {
+    width: 70px;
+    height: 150px;
+    background: #a4c639;
+    display: flex;
+    border-bottom-left-radius: 100% 35%;
+    border-bottom-right-radius: 100% 35%;
+}
+
+.leg:last-of-type {
+    animation: 6s ease-in-out 1s infinite rightLegOh;
+}

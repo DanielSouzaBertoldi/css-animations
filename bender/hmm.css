@@ -1,0 +1,187 @@
+body {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+.Bender {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: #a6b4c4;
+	background-image: radial-gradient(#a6b4c4, #59798e);
+}
+
+.Bender_eyes {
+	width: 400px;
+	height: 150px;
+	border: 3px solid black;
+	border-radius: 200px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Bender_socket {
+	width: 375px;
+	height: 125px;
+	border: 3px solid black;
+	border-radius: 200px;
+	background: black;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.Bender_eye {
+	height: 145px;
+	width: 145px;
+	background: #fefbb8;
+	border-radius: 100%;
+	margin: -10px 10px 0px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.Bender_pupil {
+	width: 20px;
+	height: 20px;
+	background: black;
+	animation: 5s ease-in-out 1s infinite pupils;
+}
+
+.Bender_mouth {
+	width: 275px;
+	height: 100px;
+	background: #fefbb8;
+	margin-top: 80px;
+	border-radius: 50px;
+	border: 4px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	overflow: hidden;
+	position: relative;
+}
+
+.Bender_tooth {
+	height: 100px;
+	width: 4px;
+	background: black;
+}
+
+.Bender_lip {
+	position: absolute;
+	width: 275px;
+	height: 4px;
+	background: black;
+	top: calc(33% - 2px);
+}
+
+.Bender_lip:last-of-type {
+	top: calc(66% - 2px);
+}
+
+/* Criando as "palpebra", que nada mais são do que uns retângulos pretos
+   quer ficarão escondidos em cima dos olhos. */
+.Bender_eye::before {
+	content: "";
+	position: absolute;
+	width: 145px;
+	height: 100px;
+	top: -100px;
+	background: black;
+	animation: 5s ease-in-out 1s infinite topEyeLid;
+}
+
+.Bender_eye::after {
+	content: "";
+	position: absolute;
+	width: 145px;
+	height: 100px;
+	bottom: -100px;
+	background: black;
+	animation: 5s ease-in-out 1s infinite bottomEyeLid;
+}
+
+/* Sem JS, puro CSS B-) */
+@keyframes topEyeLid {
+	0% {
+		transform: translateY(0px);
+	}
+	20% {
+		transform: translateY(50px);
+	}
+	35% {
+		transform: translateY(100px);
+	}
+	40% {
+		transform: translateY(50px);
+	}
+	80% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes bottomEyeLid {
+	0% {
+		transform: translateY(0px);
+	}
+	20% {
+		transform: translateY(-50px);
+	}
+	35% {
+		transform: translateY(-100px);
+	}
+	40% {
+		transform: translateY(-50px);
+	}
+	80% {
+		transform: translateY(-50px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes pupils {
+	0% {
+		transform: translateX(0px);
+	}
+	40% {
+		transform: translateX(0px);
+	}
+	45% {
+		transform: translateX(40px);
+	}
+	50% {
+		transform: translateX(30px);
+	}
+	51% {
+		transform: translateX(0px);
+	}
+	52% {
+		transform: translateX(-40px);
+	}
+	66% {
+		transform: translateX(-30px);
+	}
+	67% {
+		transform: translateX(0px);
+	}
+	80% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
